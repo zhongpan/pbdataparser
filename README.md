@@ -8,9 +8,9 @@ pbdataparser可用于:
 ```usage: pbdataparser <pbdatafile> <protofile> <messagetype>```
   
 # 编译
-conan install -if build .
-cd build
-cmake .. -G "Visual Studio 15 2017 Win64"
+* conan install -if build .
+* cd build
+* cmake .. -G "Visual Studio 15 2017 Win64"
 
 # example
 pbdataparser example/pbperfm_0X0CEBFE01_11640.dat example/alarmpm.proto nepmhead
