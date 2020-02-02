@@ -12,7 +12,7 @@ pbdataparser可用于：
 * conan install -if build .
 * cd build
 * cmake .. -G "Visual Studio 15 2017 Win64"
-* 
+* cmake --build .
 
 # example
 * pbperfm_0X0CEBFE01_11640.dat是有问题的数据
