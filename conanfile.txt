@@ -1,0 +1,11 @@
+[requires]
+protobuf/3.9.1@bincrafters/stable
+
+[generators]
+cmake
+
+[options]
+protobuf:shared=True
+
+[imports]
+bin, libprotobuf*.dll -> ./bin

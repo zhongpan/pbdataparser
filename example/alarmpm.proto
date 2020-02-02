@@ -1,0 +1,104 @@
+syntax = "proto2";
+
+message lineno
+{  
+	optional int32  tag = 1;  
+	optional int32  locatesrclength = 2;
+	optional bytes locatesrcstring = 3;  
+	optional int32  networkcrosstag = 4;
+	optional string networkcrossstring = 5;
+}
+	
+message tlv
+{
+	optional int32  tag = 1;  
+	optional int32  length = 2;
+	optional bytes  value = 3;  	
+	
+}
+message pmvalueitem
+{  
+	optional int32  pmtype = 1;  
+	optional tlv	value = 2;		
+	optional int32  code = 3;
+}
+	
+message boardpm
+{  
+	optional int32  time = 1; 
+	optional int32  boardtype = 2;  
+	optional int32  boardaddress = 3;  
+	optional int32  boardstatus = 4;  
+	repeated pmitem  pmvectors = 5;  
+}
+	
+message pmitem
+{  
+	optional lineno  line = 1;  	
+	repeated pmvalueitem  items = 2;  
+}
+	
+
+message alarmvalueitem
+{  
+	
+	optional int32  code = 1;  
+	optional int32  time = 2;  
+	optional int32  status = 3;  
+	optional int32  sequenceno = 4;  
+	
+}
+
+message alarmitem
+{  
+	optional lineno line = 1;  
+	repeated alarmvalueitem values  = 2;
+	
+}
+	
+message boardalarm
+{  
+	optional int32  boardtype = 1;  
+	optional int32  boardaddress = 2;  
+	optional int32  boardstatus = 3;  
+	repeated alarmitem  armvectors = 4;  
+	optional int32  ctrlboardaddr = 5;  
+}
+message nealarmhead
+{  
+	optional int32  neaddress = 1;  
+	optional int32  nestatus = 2;  
+	repeated boardalarm  brdalrms = 3; 
+	optional string  queryid = 4;   
+}
+	
+message nepmhead
+{  
+	optional int32  reporttype = 1;  
+	optional int32  timeflag = 2;  
+	optional int32  neaddress = 3;  
+	optional int32  nestatus = 4;  
+	repeated boardpm  brdpms = 5;  
+	optional string  queryid = 6;  
+	optional int32   timescalecount = 7;
+	
+}
+
+message	boardautofind
+{  
+	optional int32	boardaddress = 1; 					
+	optional int32	boardonlinestatus = 2; 					
+ 	optional int32	nmuboardtype = 3; 	
+  	optional int32	bmuboardtype = 4; 					
+	optional string	bmu_nmpsv = 5; 				
+	optional string	bmu_sn = 6;	
+  	optional int32	bmu_protocol_ver = 7;	
+	optional int32	first_poweron_flag = 8;					
+ 	optional string shelf_sn = 9;	
+	optional int32	shelftype = 10;	
+}
+message	nehead
+{ 
+ 	optional int32 		neaddress = 1;  	
+	repeated boardautofind	brdautofinds = 2;    					
+}
