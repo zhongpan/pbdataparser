@@ -1,5 +1,5 @@
 # pbdataparser
-pbdataparser用于动态解析pb序列化数据文件，只需要proto文件即可解析任何pb序列化数据。
+pbdataparser用于动态解析protobuf序列化数据文件，只需要proto文件即可解析。
 
 pbdataparser可用于：
 * 学习pb序列化结构
