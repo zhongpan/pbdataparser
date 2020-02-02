@@ -5,7 +5,7 @@ pbdataparser可用于:
 * 检查pb序列化文件是否正确
 
 # 用法
-> usage: pbdataparser <pbdatafile> <protofile> <messagetype>
+```usage: pbdataparser <pbdatafile> <protofile> <messagetype>```
   
 # 编译
 conan install -if build .
